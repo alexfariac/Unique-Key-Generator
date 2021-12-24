@@ -23,8 +23,6 @@ defmodule Unikey.Bucket do
   end
 
   def changeset(params) do
-    IO.inspect(params, label: "Bucket in changeset")
-
     %__MODULE__{}
     |> cast(params, @all_params)
     |> validate_required(@required_params)
