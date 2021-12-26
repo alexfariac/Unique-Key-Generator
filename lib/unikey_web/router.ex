@@ -12,6 +12,8 @@ defmodule UnikeyWeb.Router do
     get "/buckets/:bucket", BucketsController, :show
 
     post "/buckets/:bucket/sequence/next", BucketsController, :increase_sequence
+
+    post "/buckets/:bucket/keys/", KeysController, :create
   end
 
   # Enables LiveDashboard only for development

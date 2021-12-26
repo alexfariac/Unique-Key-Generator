@@ -3,6 +3,8 @@ defmodule Unikey.Bucket do
 
   import Ecto.Changeset
 
+  @upper_random_offset_limit 16
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:bucket, :account]
@@ -33,4 +35,7 @@ defmodule Unikey.Bucket do
     |> validate_number(:sequence, greater_than_or_equal_to: 0)
     |> unique_constraint([:bucket, :account])
   end
+
+  def get_offset(true), do: :rand.uniform(@upper_random_offset_limit)
+  def get_offset(random_offset) when random_offset == false, do: 1
 end
