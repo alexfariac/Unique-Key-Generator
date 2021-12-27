@@ -1,4 +1,4 @@
-# Unikey
+# Unique Key Generator
 
 To start your Phoenix server:
 
